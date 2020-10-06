@@ -1,0 +1,61 @@
+/**
+ * Helper mixins
+*/
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+// Media queries
+// use example: @include respond-to('small')
+$breakpoints: (
+  'tiny': ( min-width: $tiny ),
+  'small':  ( min-width: $small ),
+  'medium': ( min-width: $medium ),
+  'large':  ( min-width: $large )
+) !default;
+
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else { // If the key doesn't exist in the map
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+    + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+  }
+}
+
+// Text selection
+@mixin text-selection($color-selection, $color-selection-bg) {
+  ::-moz-selection {
+    background: $color-selection-bg;
+    color: $color-selection;
+    text-shadow: none;
+  }
+
+  ::selection {
+    background: $color-selection-bg;
+    color: $color-selection;
+    text-shadow: none;
+  }
+}
+
+$prefixes: 'webkit', 'moz', 'ms', 'o', 'none';
+@mixin prefix($property, $value) {
+  @each $prefix in $prefixes {
+    @if $prefix == 'none' {
+      #{$property}: $value;
+    } @else {
+      -#{$prefix}-#{$property}: $value;
+    }
+  }
+}
+

@@ -1,0 +1,64 @@
+:root {
+  font-size: 62.5%;
+}
+
+.no-select {
+  @include prefix(user-select, none);
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  @include text-selection($red, $yellow);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  background: $black;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'header' 'main' 'footer';
+    grid-template-rows: 8rem 1fr 8rem;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+    background: greenyellow;
+  }
+
+  .full-content {
+    width: 100%;
+  }
+
+  .content {
+    width: 90%;
+    max-width: 144rem;
+    position: relative;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+
+  a {
+    @include prefix(user-select, none);
+  }
+
+  button {
+    @include prefix(user-select, none);
+    cursor: pointer;
+  }
+}

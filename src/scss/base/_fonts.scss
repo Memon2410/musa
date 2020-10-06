@@ -1,0 +1,29 @@
+/**
+ * Fonts
+*/
+@font-face {
+  font-family: 'helvetica-bold';
+  src: url('../fonts/helvetica-bold.woff2') format('woff2'),
+  url('../fonts/helvetica-bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'message';
+  src: url('../fonts/message.woff2') format('woff2'),
+  url('../fonts/message.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'montserrat-regular';
+  src: url('../fonts/montserrat-regular.woff2') format('woff2'),
+  url('../fonts/montserrat-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
