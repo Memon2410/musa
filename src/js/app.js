@@ -5,6 +5,7 @@ import '../scss/app.scss'
 
 document.addEventListener('DOMContentLoaded', () => {})
 
+/*
 // Initialize service worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
@@ -23,3 +24,4 @@ if ('serviceWorker' in navigator) {
     )
   })
 }
+*/

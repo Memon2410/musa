@@ -1,5 +1,122 @@
 header {
   width: 100%;
-  height: auto;
+  height: 10rem;
   position: relative;
+  margin: 0 auto;
+
+  .content {
+    padding: 2.5rem 0 0;
+  }
+
+  h1,
+  .menu {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  h1 {
+    float: left;
+
+    img {
+      width: 12.8rem;
+      height: auto;
+
+    }
+  }
+
+  .menu {
+    float: right;
+  }
+
+  .button-header {
+    width: 4rem;
+    height: fit-content;
+    position: relative;
+    padding-top: .5rem;
+
+    span {
+      width: 4rem;
+      height: .4rem;
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  .button-open {
+    span {
+      &:first-child {
+        background: $yellow;
+      }
+
+      &:nth-child(2) {
+        background: $red;
+      }
+
+      &:last-child {
+        background: $light-blue;
+      }
+    }
+  }
+
+  .button-close {
+    float: right;
+
+    span {
+      background: $red;
+    }
+  }
+
+  .bg-menu {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $black;
+
+    .navigation {
+      min-height: 12.5rem;
+      padding-top: 7.5rem;
+      margin-top: 10rem;
+      border-top: .4rem solid $white;
+      border-bottom: .4rem solid $white;
+
+      ul {
+        li {
+          text-align: right;
+           
+          a {
+            font-family: $message;
+            font-size: 2rem;
+            line-height: 3rem;
+            text-align: right;
+            color: $white;
+            transition: ease .5s;
+            transition-property: color;
+
+            &:hover {
+              color: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to('small') {
+  header {
+    .bg-menu {
+      .navigation {
+        ul {
+          display: flex;
+          justify-content: flex-end;
+
+          li {
+            padding: 0 1rem;
+          }
+        }
+      }
+    }
+  }
 }

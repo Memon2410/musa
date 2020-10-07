@@ -6,6 +6,10 @@
   @include prefix(user-select, none);
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body,
 html {
   width: 100%;
