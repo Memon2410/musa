@@ -29,7 +29,7 @@ body {
     grid-gap: 0;
     grid-template-columns: 1fr;
     grid-template-areas: 'header' 'main' 'footer';
-    grid-template-rows: 8rem 1fr 8rem;
+    grid-template-rows: 10rem 1fr 15rem;
   }
 
   header {
@@ -51,7 +51,6 @@ body {
 
   .content {
     width: 90%;
-    max-width: 144rem;
     position: relative;
     margin: 0 auto;
     padding: 1rem 0;
@@ -65,4 +64,51 @@ body {
     @include prefix(user-select, none);
     cursor: pointer;
   }
+
+  .message {
+    font-family: $message !important;
+  }
+
+  .helvetica {
+    font-family: $helvetica !important;
+  }
+
+  .montserrat {
+    font-family: $montserrat !important;
+  }
+
+  .yellow {
+    color: $yellow !important;
+  }
+
+  .blue {
+    color: $light-blue !important;
+  }
+
+  .red {
+    color: $red !important;
+  }
+
+  .white {
+    color: $white !important;
+  }
+
+  .bg-yellow {
+    background: $yellow !important;
+  }
+
+  .bg-blue {
+    background: $light-blue !important;
+  }
+
+  .bg-red {
+    background: $red !important;
+  }
+
+  p {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+
+
 }

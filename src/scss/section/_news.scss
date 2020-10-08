@@ -1,0 +1,22 @@
+.news {
+  display: none;
+}
+
+@include respond-to('medium') {
+  .news {
+    position: relative;
+    display: block;
+    padding: 1.5rem 4.5rem !important;
+
+    .container-news {
+      overflow: hidden;
+
+      p {
+        width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}
