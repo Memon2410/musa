@@ -20,7 +20,6 @@ header {
     img {
       width: 12.8rem;
       height: auto;
-
     }
   }
 
@@ -59,6 +58,8 @@ header {
   }
 
   .button-close {
+    display: inline-block;
+    vertical-align: middle;
     float: right;
 
     span {
@@ -74,10 +75,33 @@ header {
     left: 0;
     background: $black;
 
+    .header-news,
+    .logo {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .header-news {
+      width: calc(100% - 20rem);
+      display: none;
+      font-family: $message;
+      font-size: 2rem;
+      text-align: right;
+      color: $white;
+
+      span {
+        color: $red;
+      }
+    }
+
+    .logo {
+      width: 13rem;
+    }
+
     .navigation {
       min-height: 12.5rem;
-      padding-top: 7.5rem;
-      margin-top: 10rem;
+      padding-top: 1rem;
+      margin-top: 1rem;
       border-top: .4rem solid $white;
       border-bottom: .4rem solid $white;
 
@@ -102,12 +126,24 @@ header {
       }
     }
   }
+
+  .footer {
+    width: 100%;
+    position: absolute !important;
+    bottom: 3rem;
+  }
 }
 
-@include respond-to('small') {
+@include respond-to('medium') {
   header {
     .bg-menu {
+      .header-news {
+        display: inline-block;
+      }
+
       .navigation {
+        padding-top: 7.5rem;
+
         ul {
           display: flex;
           justify-content: flex-end;

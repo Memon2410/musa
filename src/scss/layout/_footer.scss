@@ -1,0 +1,113 @@
+.footer {
+  position: relative;
+
+  .logo {
+    width: 13rem;
+    height: 5.1rem;
+    display: block !important;
+  }
+
+  p {
+    width: 100%;
+    max-width: 46.5rem;
+    margin: 2rem 0;
+    font-family: $helvetica !important;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    text-align: left;
+    color: $white;
+  }
+
+  .news-footer {
+    max-width: 46.5rem;
+    position: relative;
+
+    label {
+      display: block;
+      margin-bottom: 1rem;
+      font-family: $message;
+      font-size: 1.5rem;
+      color: $white;
+    }
+
+    input {
+      width: 100%;
+      height: 5.6rem;
+      padding: 2rem;
+      font-family: $montserrat;
+      font-size: 1.4rem;
+      border: .1rem solid $red;
+      color: $red;
+      background: $white;
+    }
+
+    .social-footer {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      ul {
+        li {
+          width: fit-content;
+          display: inline-block;
+          padding: 0 .5rem;
+          img {
+            width: auto;
+            height: 2.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    color: rgba(255, 22, 78, .6);
+  }
+
+  :-ms-input-placeholder {
+    color: rgba(255, 22, 78, .6);
+  }
+
+  ::placeholder {
+    color: rgba(255, 22, 78, .6);
+  }
+
+}
+
+@include respond-to('medium') {
+  .footer {
+    .content {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .logo {
+      width: 13rem;
+    }
+
+    p {
+      margin: 0;
+      padding-right: 2rem;
+    }
+
+    p,
+    .news-footer {
+      width: 40%;
+    }
+
+    p,
+    ul,
+    input,
+    .logo,
+    .news-footer {
+      display: inline-block !important;
+      vertical-align: middle;
+    }
+
+    .news-footer {
+      label {
+        font-size: 2rem;
+      }
+    }
+  } 
+}

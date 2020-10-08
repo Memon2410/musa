@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  @include text-selection($red, $yellow);
+  @include text-selection($light-blue, $yellow);
   position: relative;
   display: flex;
   flex-wrap: wrap;
