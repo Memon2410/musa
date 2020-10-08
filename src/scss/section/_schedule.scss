@@ -1,0 +1,49 @@
+.schedule {
+  .container-rrss {
+    width: 13rem;
+
+    .item-rrss {
+      margin: 2.5rem 0;
+    }
+
+    .content-item-rrss {
+      margin: 0 .5rem 0 1rem;
+      display: inline-block;
+      vertical-align: middle;
+
+      &:first-child {
+        max-width: 4rem;
+        position: relative;
+        text-align: center;
+      }
+
+      &:last-child {
+        max-width: 3rem;
+        position: relative;
+        text-align: center;
+      }      
+    }
+
+    .message {
+      display: none;
+    }
+  }
+}
+
+@include respond-to('medium') {
+  .schedule {
+    .container-rrss {
+      width: 30rem;
+
+      .message {
+        display: inline-block;
+      }
+
+      .content-item-rrss {
+        &:last-child {
+          float: right;
+        }  
+      }
+    }
+  } 
+}
