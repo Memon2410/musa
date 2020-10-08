@@ -45,12 +45,8 @@ body {
     background: greenyellow;
   }
 
-  .full-content {
-    width: 100%;
-  }
-
   .content {
-    width: 90%;
+    width: 90vw;
     position: relative;
     margin: 0 auto;
     padding: 1rem 0;
@@ -103,6 +99,10 @@ body {
 
   .bg-red {
     background: $red !important;
+  }
+
+  .bg-black {
+    background: $black !important;
   }
 
   p {
