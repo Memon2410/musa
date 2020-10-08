@@ -75,6 +75,33 @@
       #grid-8 {
         width: 100%;
       }
+
+      #grid-4,
+      #grid-5,
+      #grid-8 {
+        .pic-footer {
+          background: $transparent !important;
+        }
+      }
+    }
+  }
+
+  .pic-footer {
+    width: 100%;
+    min-height: 5rem;
+    max-width: 60rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #000000CC;
+
+    p {
+      width: 100%;
+      position: absolute;
+      bottom: .5rem;
+      font-size: 1.25rem !important;
+      line-height: 1.5rem !important;
+      text-align: right;
     }
   }
 }
@@ -97,5 +124,9 @@
         }
       }
     }
-  }  
+
+    .pic-footer {
+      min-height: 9rem;
+    }
+  }
 }
