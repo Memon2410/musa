@@ -71,12 +71,12 @@
   ::placeholder {
     color: rgba(255, 22, 78, .6);
   }
-
 }
 
 @include respond-to('medium') {
   .footer {
     .content {
+      padding: 2.5rem 3rem;
       display: flex;
       justify-content: space-between;
     }
@@ -109,5 +109,5 @@
         font-size: 2rem;
       }
     }
-  } 
+  }
 }

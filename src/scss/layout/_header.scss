@@ -3,6 +3,7 @@ header {
   height: 10rem;
   position: relative;
   margin: 0 auto;
+  z-index: 1000;
 
   .content {
     padding: 2.5rem 0 0;
@@ -130,12 +131,18 @@ header {
   .footer {
     width: 100%;
     position: absolute !important;
+    padding-top: 3rem;
     bottom: 3rem;
   }
 }
 
 @include respond-to('medium') {
   header {
+    .content-header {
+      width: calc(100% - 6rem);
+      margin: 0 auto;
+    }
+
     .bg-menu {
       .header-news {
         display: inline-block;
@@ -152,6 +159,12 @@ header {
             padding: 0 1rem;
           }
         }
+      }
+    }
+
+    .footer {
+      .content {
+        border-top: .4rem solid $white;
       }
     }
   }
