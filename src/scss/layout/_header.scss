@@ -85,12 +85,7 @@ header {
     }
 
     .header-news {
-      width: calc(100% - 20rem);
       display: none;
-      font-family: $message;
-      font-size: 2rem;
-      text-align: right;
-      color: $white;
 
       span {
         color: $red;
@@ -147,7 +142,12 @@ header {
 
     .bg-menu {
       .header-news {
+        width: calc(100% - 20rem);
         display: inline-block;
+        font-family: $message;
+        font-size: 1.25rem;
+        text-align: right;
+        color: $white;
       }
 
       .navigation {
@@ -167,6 +167,16 @@ header {
     .footer {
       .content {
         border-top: .4rem solid $white;
+      }
+    }
+  }
+}
+
+@include respond-to('large') {
+  header {
+    .bg-menu {
+      .header-news {
+        font-size: 1.5rem;
       }
     }
   }
