@@ -1,5 +1,6 @@
 export default class Header {
   constructor () {
+    this.body = document.getElementsByTagName('body')[0]
     this.open = document.getElementsByClassName('button-open')[0]
     this.close = document.getElementsByClassName('button-close')[0]
     this.menu = document.getElementsByClassName('bg-menu')[0]
@@ -75,10 +76,21 @@ export default class Header {
 
     this.open.addEventListener('click', event => {
       this.menu.style.display = 'block'
+      this.body.style.overflow = 'hidden'
+
+      window.gsap.to(this.menu, 0.5, {
+        alpha: 1
+      })
     })
 
     this.close.addEventListener('click', event => {
-      this.menu.style.display = 'none'
+      this.body.style.overflow = 'auto'
+      window.gsap.to(this.menu, 0.5, {
+        alpha: 0,
+        onComplete: () => {
+          this.menu.style.display = 'none'
+        }
+      })
     })
   }
 }

@@ -76,6 +76,7 @@ header {
     display: none;
     top: 0;
     left: 0;
+    opacity: 0;
     background: $black;
 
     .header-news,
@@ -102,6 +103,12 @@ header {
       margin-top: 1rem;
       border-top: .4rem solid $white;
       border-bottom: .4rem solid $white;
+
+      .content-header {
+        .logo {
+          margin: 0 auto -2rem;
+        }
+      }
 
       ul {
         li {
