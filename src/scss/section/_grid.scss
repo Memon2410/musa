@@ -12,6 +12,7 @@
 
       .item-grid {
         position: relative;
+        overflow: hidden;
 
         img {
           object-fit: cover;
@@ -128,5 +129,18 @@
     .pic-footer {
       min-height: 9rem;
     }
+  }
+}
+
+@media (hover: hover) {
+  .item-grid {
+    &:hover > img {
+      transform: scale(1.1);
+      filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',M11=2, M12=-0, M21=0, M22=2)
+    }
+  }
+
+  .zoom-image {
+    transition: all .3s ease-out;
   }
 }
