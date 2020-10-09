@@ -7,10 +7,6 @@ import { gsap, CSSRulePlugin, ScrollToPlugin } from 'gsap/all'
 // Components
 import Preloader from './components/preloader'
 
-// Utils
-import Auxiliar from './utils/auxiliar'
-import Lazy from './utils/lazy'
-
 // Layout
 import Header from './layout/header'
 
