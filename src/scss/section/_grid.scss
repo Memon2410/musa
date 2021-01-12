@@ -20,6 +20,7 @@
       }
 
       .sixty-grid,
+      .fifty-grid,
       .forty-grid,
       #grid-2,
       #grid-3,
@@ -33,6 +34,10 @@
         width: calc(60% - .25rem);
         margin-top: .5rem;
       }
+
+      .fifty-grid {
+        width: calc(50% - .25rem);
+      } 
 
       .forty-grid {
         width: calc(40% - .25rem);
@@ -50,6 +55,10 @@
       }
 
       #grid-3 {
+        width: calc(50% - .5rem);
+      }
+
+      #grid-3a {
         width: calc(50% - .25rem);
         float: right;
       }
@@ -81,7 +90,7 @@
       #grid-5,
       #grid-8 {
         .pic-footer {
-          background: $transparent !important;
+          // background: $transparent !important;
         }
       }
     }
@@ -90,7 +99,7 @@
   .pic-footer {
     width: 100%;
     min-height: 5rem;
-    max-width: 60rem;
+    // max-width: 60rem;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -103,6 +112,11 @@
       font-size: 1.25rem !important;
       line-height: 1.5rem !important;
       text-align: right;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
     }
   }
 }
@@ -120,6 +134,7 @@
         width: calc(50% - .25rem);
 
         .sixty-grid,
+        .fifty-grid,
         .forty-grid {
           margin-top: 0;
         }
