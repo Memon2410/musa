@@ -11,11 +11,22 @@
     .container-news {
       overflow: hidden;
 
-      p {
+      .ticker-wrapper {
         white-space: nowrap;
-        text-overflow: ellipsis;
+      }
+
+      li {
+        padding: .5rem 10rem 0 0;
+        display: inline-block;
+        font-size: 1.75rem;
+        white-space: nowrap;
         overflow: hidden;
+      }
+
+      span{
+        display: inline-block;
       }
     }
   }
 }
+

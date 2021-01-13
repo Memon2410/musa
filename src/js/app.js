@@ -2,7 +2,13 @@
 import '../scss/app.scss'
 
 // Dependencies
-import { gsap, CSSRulePlugin, ScrollToPlugin } from 'gsap/all'
+import {
+  gsap,
+  CSSRulePlugin,
+  ScrollToPlugin,
+  TimelineMax,
+  Power0
+} from 'gsap/all'
 
 // Components
 import Preloader from './components/preloader'
@@ -18,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(CSSRulePlugin)
   gsap.registerPlugin(ScrollToPlugin)
   window.CSSRulePlugin = CSSRulePlugin
+  window.TimelineMax = TimelineMax
+  window.Power0 = Power0
 
   window.onload = () => {
     window.preloader = new Preloader()

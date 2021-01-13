@@ -1,10 +1,14 @@
+import $ from 'jquery'
+
 export default class News {
   constructor () {
     this.breakNews = document
       .getElementsByClassName('container-news')[0]
-      .getElementsByTagName('p')[0]
+      .getElementsByTagName('li')[0]
 
-    this.contentSchedule = document.getElementsByClassName('content schedule')[0]
+    this.contentSchedule = document.getElementsByClassName(
+      'content schedule'
+    )[0]
     this.containerHours = document.getElementsByClassName('container-hours')[0]
     this.containerShows = document.getElementsByClassName('container-shows')[0]
     this.itemHour = document.getElementsByClassName('item-hour')
@@ -21,7 +25,10 @@ export default class News {
 
   setSizeSchedule (size) {
     const diffSize = size === 'small' ? 138 : 310
-    const itemSize = size === 'small' ? this.contentSchedule.offsetWidth - diffSize : (this.contentSchedule.offsetWidth - diffSize) / 3
+    const itemSize =
+      size === 'small'
+        ? this.contentSchedule.offsetWidth - diffSize
+        : (this.contentSchedule.offsetWidth - diffSize) / 3
     const containersWidth = itemSize * 50
 
     Array.from(this.itemHour).map((current, index) => {
@@ -62,23 +69,37 @@ export default class News {
     this.containerShows.style.width = containersWidth + 'px'
   }
 
-  setSizeNews () {
-    this.breakNews.style.width = window.innerWidth * 0.825 + 'px'
+  createTicker () {
+    $('.message-news li').wrapAll('<span class="ticker-items">')
+    const tickerWidth = $('.message-news').width()
+    const spanWidth = $('.message-news span').width()
+
+    $('.message-news span')
+      .clone()
+      .appendTo('.message-news')
+    $('.message-news span').wrapAll('<span class="ticker-wrapper">')
+
+    window.gsap.set('.ticker-wrapper', { x: tickerWidth })
+    const tl = new window.TimelineMax({ repeat: -1 })
+
+    tl.to('.ticker-wrapper', 1, {
+      x: '-=50',
+      ease: window.Power0.easeNone,
+      onComplete: function () {
+        const style = window.getComputedStyle($('.ticker-wrapper')[0])
+        const matrix = new WebKitCSSMatrix(style.webkitTransform)
+        if (matrix.m41 < 0 - spanWidth) {
+          window.gsap.set('.ticker-wrapper', { x: 0 })
+        }
+        this.invalidate()
+      }
+    })
   }
 
   initNews () {
-    let size = window.innerWidth >= 992 ? 'big' : 'small'
-
-    if (window.innerWidth >= 992) {
-      this.setSizeNews()
-    }
+    const size = window.innerWidth >= 992 ? 'big' : 'small'
 
     this.setSizeSchedule(size)
-
-    window.addEventListener('resize', event => {
-      if (window.innerWidth >= 992) {
-        this.setSizeNews()
-      }
-    })
+    this.createTicker()
   }
 }
