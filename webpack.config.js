@@ -86,6 +86,20 @@ const config = {
         'favicon.ico'
       )
     }),
+
+    new HtmlWebpackPlugin({
+      inject: true,
+      hash: false,
+      filename: 'responsive.html',
+      template: path.resolve(__dirname, 'src', 'responsive.html'),
+      favicon: path.resolve(
+        __dirname,
+        'src',
+        'images/content/favicon',
+        'favicon.ico'
+      )
+    }),
+
     new MiniCssExtractPlugin({
       filename: 'css/[name].css'
     }),

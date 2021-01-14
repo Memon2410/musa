@@ -12,6 +12,7 @@ import {
 } from 'gsap/all'
 
 // Components
+import Parallax from './components/parallax'
 import Preloader from './components/preloader'
 
 // Layout
@@ -35,6 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.onload = () => {
     window.preloader = new Preloader()
     window.preloader.hide()
+  }
+
+  if (document.getElementsByClassName('responsive').length > 0) {
+    const parallax = new Parallax()
+    parallax.initParallax()
   }
 
   if (document.getElementsByClassName('content').length > 0) {
