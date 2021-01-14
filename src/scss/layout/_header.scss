@@ -72,8 +72,9 @@ header {
   .bg-menu {
     width: 100%;
     min-height: 100vh;
-    position: fixed;
+    position: absolute;
     display: none;
+    margin-bottom: -35rem;
     top: 0;
     left: 0;
     opacity: 0;
@@ -138,6 +139,11 @@ header {
     padding-top: 3rem;
     bottom: 3rem;
   }
+
+  .footer,
+  .push {
+    height: 35rem;
+  }
 }
 
 @include respond-to('medium') {
@@ -148,6 +154,8 @@ header {
     }
 
     .bg-menu {
+      margin-bottom: -25rem;
+
       .header-news {
         width: calc(100% - 20rem);
         display: inline-block;
@@ -175,6 +183,11 @@ header {
       .content {
         border-top: .4rem solid $white;
       }
+    }
+
+    .footer,
+    .push {
+      height: 25rem
     }
   }
 }

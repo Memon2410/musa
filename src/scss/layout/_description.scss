@@ -1,0 +1,18 @@
+.description {
+  p {
+    margin: 5rem 0;
+    font-family: helvetica, Arial, sans-serif;
+    font-size: 1.45rem;
+    color: $red;
+  }
+}
+
+@include respond-to('medium') {
+  .description {
+    p {
+      width: 80%;
+      max-width: 102.5rem;
+    }
+  }
+}
+

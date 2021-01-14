@@ -4,6 +4,9 @@ export default class Header {
     this.open = document.getElementsByClassName('button-open')[0]
     this.close = document.getElementsByClassName('button-close')[0]
     this.menu = document.getElementsByClassName('bg-menu')[0]
+    this.main = document.getElementsByTagName('main')[0]
+    this.generalFooter = document.getElementsByClassName('general-footer')[0]
+    this.headerHome = document.getElementsByClassName('content-header-home')[0]
 
     this.linesOpen = this.open.getElementsByTagName('span')
     this.linesClose = this.close.getElementsByTagName('span')
@@ -76,7 +79,9 @@ export default class Header {
 
     this.open.addEventListener('click', event => {
       this.menu.style.display = 'block'
-      this.body.style.overflow = 'hidden'
+      this.main.style.display = 'none'
+      this.generalFooter.style.display = 'none'
+      this.headerHome.style.opacity = '0'
 
       window.gsap.to(this.menu, 0.5, {
         alpha: 1
@@ -84,7 +89,9 @@ export default class Header {
     })
 
     this.close.addEventListener('click', event => {
-      this.body.style.overflow = 'auto'
+      this.main.style.display = 'block'
+      this.generalFooter.style.display = 'block'
+      this.headerHome.style.opacity = '1'
       window.gsap.to(this.menu, 0.5, {
         alpha: 0,
         onComplete: () => {

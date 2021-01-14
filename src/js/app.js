@@ -2,6 +2,7 @@
 import '../scss/app.scss'
 
 // Dependencies
+import Bowser from 'bowser'
 import {
   gsap,
   CSSRulePlugin,
@@ -14,12 +15,16 @@ import {
 import Preloader from './components/preloader'
 
 // Layout
+import Description from './layout/description'
 import Header from './layout/header'
 
 // Sections
 import News from './sections/news'
 
 document.addEventListener('DOMContentLoaded', () => {
+  const infoBrowser = Bowser.getParser(window.navigator.userAgent)
+  window.platform = infoBrowser.parsedResult.platform.type
+
   window.gsap = gsap
   gsap.registerPlugin(CSSRulePlugin)
   gsap.registerPlugin(ScrollToPlugin)
@@ -32,9 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.preloader.hide()
   }
 
-  const header = new Header()
-  header.initHeader()
+  if (document.getElementsByClassName('content').length > 0) {
+    const header = new Header()
+    header.initHeader()
 
-  const news = new News()
-  news.initNews()
+    const news = new News()
+    news.initNews()
+
+    if (window.platform === 'desktop') {
+      const description = new Description()
+      description.initDescription()
+    }
+  }
 })
