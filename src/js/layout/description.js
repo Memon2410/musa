@@ -10,17 +10,39 @@ class Description {
       'Aquí vive todo el contenido de MUSA, en un archivo filtraba por varias categoría (ie. fecha, medio, nombre de creador, proyecto, etc.)',
       'Tienda. Merca + ediciones o mercancías derivadas de cualquier colaboración de MUSA. Venta de objetos exclusivos y ediciones, y ventas de tiempo limitado.'
     ]
+    this.first = true
+  }
+
+  setHeight (height) {
+    document.getElementById('description-menu').style.minHeight = height + 'px'
   }
 
   initDescription () {
+    let resizeTimer = null
     Array.from(this.buttons).map((current, index) => {
       current.addEventListener('mouseover', event => {
+        if (this.first) {
+          this.setHeight(
+            document.getElementById('description-menu').clientHeight
+          )
+          this.first = false
+        }
         this.paragraph.innerText = this.descriptons[index]
+        this.paragraph.style.opacity = '1'
       })
 
       current.addEventListener('mouseout', event => {
         this.paragraph.innerText = ''
       })
+    })
+
+    window.addEventListener('resize', event => {
+      clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(event => {
+        this.paragraph.style.opacity = '0'
+        this.paragraph.innerText = this.descriptons[0]
+        this.setHeight(document.getElementById('description-menu').clientHeight)
+      }, 250)
     })
   }
 }
