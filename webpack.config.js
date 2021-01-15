@@ -90,8 +90,8 @@ const config = {
     new HtmlWebpackPlugin({
       inject: true,
       hash: false,
-      filename: 'responsive.html',
-      template: path.resolve(__dirname, 'src', 'responsive.html'),
+      filename: 'dummy.html',
+      template: path.resolve(__dirname, 'src', 'dummy.html'),
       favicon: path.resolve(
         __dirname,
         'src',
